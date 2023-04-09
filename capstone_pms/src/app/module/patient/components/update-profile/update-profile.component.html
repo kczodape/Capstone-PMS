@@ -1,0 +1,71 @@
+<div class="updation">
+    <div>
+      <h1>Update</h1>
+    </div>
+    <form #updateForm="ngForm" (ngSubmit)="onSubmit(updateForm.value)">
+      <div>
+
+        <mat-form-field appearance="outline" class="width-50">
+          <mat-label>Title</mat-label>
+          <mat-select id="title" name="title" [(ngModel)]="patient.title" >
+            <mat-option value="Mr">Mr</mat-option>
+            <mat-option value="Ms">Ms</mat-option>
+            <mat-option value="Miss">Miss</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>FirstName</mat-label>
+          <input  matInput name="firstName" ngModel required />
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>LastName</mat-label>
+          <input matInput name="lastName" ngModel required />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Contact Number</mat-label>
+        <input matInput name="contactNumber" ngModel required />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline" class="width-50">
+        <mat-label>DOB </mat-label>
+        <input
+          matInput
+          name="dob"
+          [(ngModel)]="patient.dob"
+          [matDatepicker]="picker"
+
+        />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="width-50">
+        <mat-label>Gender</mat-label>
+        <mat-select id="gender" name="gender" [(ngModel)]="patient.gender">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <mat-form-field appearance="outline" style="width:96%;">
+          <mat-label>Address</mat-label>
+          <textarea matInput name="address" ngModel></textarea>
+        </mat-form-field>
+        
+      </div>
+      <button type="submit" mat-raised-button color="primary" routerLinkActive="active">
+       Update
+      </button>
+      
+  
+    </form>
+  </div>
