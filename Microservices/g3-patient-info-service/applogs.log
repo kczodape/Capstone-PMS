@@ -1,0 +1,313 @@
+2023-04-07T11:05:09.509+05:30  INFO 18400 --- [restartedMain] c.c.a.PatientInfoServiceApplication      : Starting PatientInfoServiceApplication using Java 17.0.6 with PID 18400 (C:\Users\KUNAL\Desktop\final-integration\Final-integration\Microservices\g3-patient-info-service\target\classes started by KUNAL in C:\Users\KUNAL\Desktop\final-integration\Final-integration\Microservices\g3-patient-info-service)
+2023-04-07T11:05:09.523+05:30  INFO 18400 --- [restartedMain] c.c.a.PatientInfoServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-04-07T11:05:09.693+05:30  INFO 18400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-07T11:05:09.694+05:30  INFO 18400 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-07T11:05:17.470+05:30  INFO 18400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-07T11:05:18.094+05:30  INFO 18400 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 608 ms. Found 1 JPA repository interfaces.
+2023-04-07T11:05:19.467+05:30  INFO 18400 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=172e2e86-24d2-3402-ab21-edd9856b7d92
+2023-04-07T11:05:20.110+05:30  INFO 18400 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-07T11:05:20.349+05:30  INFO 18400 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-04-07T11:05:22.245+05:30  INFO 18400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9006 (http)
+2023-04-07T11:05:22.330+05:30  INFO 18400 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-07T11:05:22.332+05:30  INFO 18400 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-07T11:05:22.631+05:30  INFO 18400 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-07T11:05:22.632+05:30  INFO 18400 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12937 ms
+2023-04-07T11:05:23.602+05:30  INFO 18400 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-07T11:05:23.775+05:30  INFO 18400 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-07T11:05:25.008+05:30  INFO 18400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-07T11:05:25.787+05:30  INFO 18400 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@699ce70
+2023-04-07T11:05:25.792+05:30  INFO 18400 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-07T11:05:26.063+05:30  INFO 18400 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-04-07T11:05:29.777+05:30  INFO 18400 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-07T11:05:29.802+05:30  INFO 18400 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-07T11:05:30.984+05:30  WARN 18400 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-07T11:05:34.802+05:30  WARN 18400 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-04-07T11:05:35.264+05:30  WARN 18400 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-04-07T11:05:35.279+05:30  INFO 18400 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-04-07T11:05:35.522+05:30  INFO 18400 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9006 (http) with context path ''
+2023-04-07T11:05:35.526+05:30  INFO 18400 --- [restartedMain] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='g3-patient-info-service-9006', name='g3-patient-info-service', tags=[], address='LENOVO-2021', meta={secure=false}, port=9006, enableTagOverride=null, check=Check{script='null', dockerContainerID='null', shell='null', interval='10s', ttl='null', http='http://LENOVO-2021:9006/actuator/health', method='null', header={}, tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null', grpc='null', grpcUseTLS=null}, checks=null}
+2023-04-07T11:05:35.809+05:30  INFO 18400 --- [restartedMain] c.c.a.PatientInfoServiceApplication      : Started PatientInfoServiceApplication in 34.664 seconds (process running for 40.824)
+2023-04-07T11:05:37.415+05:30  INFO 18400 --- [http-nio-9006-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-07T11:05:37.415+05:30  INFO 18400 --- [http-nio-9006-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-07T11:05:37.420+05:30  INFO 18400 --- [http-nio-9006-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-04-07T21:56:26.342+05:30  INFO 15560 --- [restartedMain] c.c.a.PatientInfoServiceApplication      : Starting PatientInfoServiceApplication using Java 17.0.6 with PID 15560 (C:\Users\KUNAL\Desktop\final-integration\Final-integration\Microservices\g3-patient-info-service\target\classes started by KUNAL in C:\Users\KUNAL\Desktop\final-integration\Final-integration\Microservices\g3-patient-info-service)
+2023-04-07T21:56:26.345+05:30  INFO 15560 --- [restartedMain] c.c.a.PatientInfoServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-04-07T21:56:26.387+05:30  INFO 15560 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-07T21:56:26.388+05:30  INFO 15560 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-07T21:56:27.576+05:30  INFO 15560 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-07T21:56:27.830+05:30  INFO 15560 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 245 ms. Found 1 JPA repository interfaces.
+2023-04-07T21:56:28.311+05:30  INFO 15560 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=172e2e86-24d2-3402-ab21-edd9856b7d92
+2023-04-07T21:56:28.483+05:30  INFO 15560 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-07T21:56:28.540+05:30  INFO 15560 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-04-07T21:56:29.155+05:30  INFO 15560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9006 (http)
+2023-04-07T21:56:29.175+05:30  INFO 15560 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-07T21:56:29.177+05:30  INFO 15560 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-07T21:56:29.277+05:30  INFO 15560 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-07T21:56:29.277+05:30  INFO 15560 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2889 ms
+2023-04-07T21:56:29.656+05:30  INFO 15560 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-07T21:56:29.719+05:30  INFO 15560 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-07T21:56:30.074+05:30  INFO 15560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-07T21:56:30.266+05:30  INFO 15560 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1fd18ca9
+2023-04-07T21:56:30.268+05:30  INFO 15560 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-07T21:56:30.324+05:30  INFO 15560 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-04-07T21:56:31.009+05:30  INFO 15560 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-07T21:56:31.017+05:30  INFO 15560 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-07T21:56:31.360+05:30  WARN 15560 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-07T21:56:32.540+05:30  WARN 15560 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-04-07T21:56:32.755+05:30  WARN 15560 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-04-07T21:56:32.762+05:30  INFO 15560 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-04-07T21:56:32.873+05:30  INFO 15560 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9006 (http) with context path ''
+2023-04-07T21:56:32.876+05:30  INFO 15560 --- [restartedMain] o.s.c.c.s.ConsulServiceRegistry          : Registering service with consul: NewService{id='g3-patient-info-service-9006', name='g3-patient-info-service', tags=[], address='LENOVO-2021', meta={secure=false}, port=9006, enableTagOverride=null, check=Check{script='null', dockerContainerID='null', shell='null', interval='10s', ttl='null', http='http://LENOVO-2021:9006/actuator/health', method='null', header={}, tcp='null', timeout='null', deregisterCriticalServiceAfter='null', tlsSkipVerify=null, status='null', grpc='null', grpcUseTLS=null}, checks=null}
+2023-04-07T21:56:33.036+05:30  INFO 15560 --- [restartedMain] c.c.a.PatientInfoServiceApplication      : Started PatientInfoServiceApplication in 7.457 seconds (process running for 8.32)
+2023-04-07T21:56:42.649+05:30  INFO 15560 --- [http-nio-9006-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-07T21:56:42.650+05:30  INFO 15560 --- [http-nio-9006-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-07T21:56:42.651+05:30  INFO 15560 --- [http-nio-9006-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-07T22:00:54.667+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:00:54.671+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:01:02.782+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:01:02.784+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:02:17.036+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:02:17.036+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:02:25.687+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:02:25.689+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:02:34.106+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:02:34.107+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:02:48.714+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:02:48.714+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:06:52.603+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:06:52.605+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:07:14.281+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:07:14.282+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:07:24.772+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:07:24.772+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:11:53.509+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:11:53.509+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:12:28.964+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:12:28.965+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:12:32.126+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:12:32.126+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:12:38.800+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:12:38.800+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:13:12.357+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:13:12.358+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:13:23.800+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:13:23.801+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:13:53.974+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:13:53.974+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:13:56.839+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:13:56.839+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:14:04.306+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:14:04.306+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:14:07.391+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:14:07.391+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:14:14.954+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:14:14.954+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:18:55.938+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:18:55.938+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:18:57.065+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:18:57.066+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:20:08.557+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:20:08.558+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:20:14.428+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:20:14.429+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:20:24.893+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:20:24.893+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:20:26.457+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:20:26.457+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:22:14.233+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:22:14.233+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:22:17.246+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:22:17.246+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:22:51.433+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:22:51.434+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:22:56.403+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:22:56.403+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:22:58.682+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:22:58.682+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:23:02.346+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:23:02.347+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:23:21.916+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:23:21.917+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:23:39.273+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:23:39.274+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:24:07.867+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:24:07.868+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:24:14.683+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:24:14.683+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:24:21.056+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:24:21.057+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:24:32.243+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:24:32.243+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:24:48.039+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:24:48.039+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:24:57.220+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:24:57.235+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:25:09.100+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:25:09.102+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:25:23.743+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:25:23.743+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:25:46.842+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:25:46.843+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:26:04.625+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:26:04.626+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:26:14.123+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:26:14.124+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:26:47.079+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:26:47.080+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:26:49.906+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:26:49.907+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:26:52.965+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:26:52.966+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:26:53.966+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:26:53.966+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:26:56.801+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:26:56.802+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:27:05.908+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:27:05.908+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:27:15.370+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:27:15.395+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:27:17.449+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:27:17.450+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:27:21.427+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:27:21.428+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:28:46.500+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:28:46.500+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:32:20.644+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:32:20.644+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:32:27.574+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:32:27.574+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:32:43.292+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:32:43.293+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:35:12.911+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:35:12.912+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:35:15.209+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:35:15.231+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:35:17.880+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:35:17.881+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:35:29.451+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:35:29.451+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:36:48.379+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:36:48.381+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:36:51.399+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:36:51.400+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:36:55.233+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:36:55.234+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:36:56.773+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:36:56.773+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:36:59.512+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:36:59.512+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:37:35.270+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:37:35.270+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:37:48.553+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:37:48.554+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:38:19.890+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:38:19.890+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:38:34.554+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:38:34.554+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:40:24.623+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:40:24.623+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:40:37.345+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:40:37.345+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:41:13.234+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:41:13.234+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:41:15.809+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:41:15.809+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:43.727+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:43.728+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:44.074+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:44.074+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:46.759+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:46.760+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:46.879+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:46.879+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:47.871+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:47.872+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:49.771+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:49.772+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:49.835+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:49.836+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:53.732+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:53.732+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:53.756+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:53.756+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:42:57.221+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:42:57.221+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:44:34.762+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:44:34.763+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:44:34.853+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:44:34.853+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:44:40.086+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:44:40.087+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:44:40.221+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:44:40.222+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:44:47.198+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:44:47.198+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:44:47.308+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:44:47.308+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:46:05.677+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:46:05.678+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:46:05.847+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:46:05.847+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:46:09.849+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:46:09.850+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:46:09.982+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:46:09.982+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:47:14.596+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:47:14.596+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:47:15.162+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:47:15.162+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:47:20.545+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:47:20.546+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:47:21.559+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:47:21.560+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:47:45.493+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:47:45.494+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:47:46.117+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:47:46.118+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:48:42.101+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:48:42.102+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:48:42.415+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:48:42.415+05:30  INFO 15560 --- [http-nio-9006-exec-7] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:49:12.209+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:49:12.210+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:49:12.397+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:49:12.397+05:30  INFO 15560 --- [http-nio-9006-exec-2] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:49:36.430+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:49:36.431+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:49:36.463+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:49:36.464+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:49:42.152+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:49:42.153+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:49:42.195+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:49:42.195+05:30  INFO 15560 --- [http-nio-9006-exec-9] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:49:56.514+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:49:56.515+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:50:02.353+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:50:02.354+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:52:06.103+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:52:06.103+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:52:20.783+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:52:20.784+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:52:42.451+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:52:42.492+05:30  INFO 15560 --- [http-nio-9006-exec-4] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:52:45.536+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:52:45.536+05:30  INFO 15560 --- [http-nio-9006-exec-5] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:52:47.591+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:52:47.591+05:30  INFO 15560 --- [http-nio-9006-exec-6] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:52:54.442+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:52:54.443+05:30  INFO 15560 --- [http-nio-9006-exec-8] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:53:20.720+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:53:20.721+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:54:22.645+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.controller.PatientInfoController   : Patient list fetched successfully
+2023-04-07T22:54:22.645+05:30  INFO 15560 --- [http-nio-9006-exec-10] c.c.a.s.impl.PatientInfoServiceImpl      : Fetched patient list successfully
+2023-04-07T22:54:31.832+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:54:31.832+05:30  INFO 15560 --- [http-nio-9006-exec-1] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:54:38.355+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.controller.PatientInfoController   : fetching patient information by patientId successfully
+2023-04-07T22:54:38.355+05:30  INFO 15560 --- [http-nio-9006-exec-3] c.c.a.s.impl.PatientInfoServiceImpl      : Patient fetched by patientId
+2023-04-07T22:55:52.974+05:30  INFO 15560 --- [RMI TCP Connection(69)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-04-07T22:55:53.221+05:30  INFO 15560 --- [RMI TCP Connection(69)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-04-07T22:55:53.278+05:30  INFO 15560 --- [RMI TCP Connection(69)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-04-07T22:55:53.379+05:30  INFO 15560 --- [RMI TCP Connection(69)-127.0.0.1] o.s.c.c.s.ConsulServiceRegistry          : Deregistering service with consul: g3-patient-info-service-9006
+2023-04-07T22:55:53.473+05:30  INFO 15560 --- [RMI TCP Connection(69)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-07T22:55:53.538+05:30  INFO 15560 --- [RMI TCP Connection(69)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-07T22:55:53.558+05:30  INFO 15560 --- [RMI TCP Connection(69)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
