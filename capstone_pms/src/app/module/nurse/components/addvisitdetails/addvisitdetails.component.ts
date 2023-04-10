@@ -5,7 +5,12 @@ import { Router } from '@angular/router';
 import { NurseService } from '../../nurse.service';
 import { SnackbarComponent } from '../snackbar/snackbar.component';
 import { VisitDetails } from './visistDetails.model';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { SubmitdialogComponent } from '../submitdialog/submitdialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -22,6 +27,8 @@ export interface Allergy {
 export class AddvisitdetailsComponent implements OnInit {
   // allergyName
   // cuurentAlergyName:any;
+  //reactive
+  myGroup: FormGroup;
 
   bloodGroups: any[] = [
     { value: 'O+', viewValue: 'O+' },
@@ -36,9 +43,24 @@ export class AddvisitdetailsComponent implements OnInit {
   public visitDetails: VisitDetails = new VisitDetails();
   user = new VisitDetails();
   constructor(
+    private formBuilder: FormBuilder,
+
     private _visitDetailsService: NurseService,
     private matDialog: MatDialog
-  ) {}
+  ) {
+    this.myGroup = this.formBuilder.group({
+      myInputheight: ['', [Validators.required]],
+      myInputweight: ['', [Validators.required]],
+      myInputLastrespiration: ['', [Validators.required]],
+      myInputtemperature: ['', [Validators.required]],
+      myInputsystolic: ['', [Validators.required]],
+      myInputdiastolic: ['', [Validators.required]],
+      myInputallergies: ['', [Validators.required]],
+      myInputbloodGroup: ['', [Validators.required]],
+      myInputKeynotes: ['', [Validators.required, Validators.maxLength(6)]],
+    });
+  }
+
   ngOnInit(): void {
     this.getAllergies();
     console.log(
@@ -97,6 +119,10 @@ export class AddvisitdetailsComponent implements OnInit {
     console.log(arg.height);
     this.saveDetails();
     this.clicked = true;
+
+    if (this.myGroup.valid) {
+      this.saveDetails();
+    }
   }
   hide = true;
 

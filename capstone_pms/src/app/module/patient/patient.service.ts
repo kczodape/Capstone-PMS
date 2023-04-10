@@ -39,7 +39,7 @@ export class PatientService {
 
   public loginUserFromRemote(login: Login): Observable<any> {
     return this.httpClient.post<any>(
-      'http://localhost:9001/authentication-service/patient/login',
+      'http://localhost:9004/api/v1/patient/login',
       login
     );
   }

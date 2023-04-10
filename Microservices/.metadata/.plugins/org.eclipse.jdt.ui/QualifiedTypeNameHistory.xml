@@ -10,4 +10,14 @@
     <fullyQualifiedTypeName name="kong.unirest.JsonNode"/>
     <fullyQualifiedTypeName name="kong.unirest.json.JSONArray"/>
     <fullyQualifiedTypeName name="kong.unirest.json.JSONObject"/>
+    <fullyQualifiedTypeName name="com.capstone.application.exception.PatientInfoException"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Primary"/>
+    <fullyQualifiedTypeName name="org.springframework.web.reactive.function.client.WebClient"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpClient"/>
+    <fullyQualifiedTypeName name="io.netty.resolver.DefaultAddressResolverGroup"/>
+    <fullyQualifiedTypeName name="org.springframework.http.client.reactive.ReactorClientHttpConnector"/>
+    <fullyQualifiedTypeName name="org.apache.http.client.HttpClient"/>
+    <fullyQualifiedTypeName name="reactor.netty.http.client.HttpClient"/>
 </qualifiedTypeNameHistroy>

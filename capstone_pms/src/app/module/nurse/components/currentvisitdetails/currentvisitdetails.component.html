@@ -1,24 +1,36 @@
 <mat-card>
-  <div class="mainclass">
-    <div class="childclass childclass1">
-      <p><span>Height: </span>{{ curentVisitDetails.height }}</p>
-      <p><span>Weight : </span>{{ curentVisitDetails.weight }}</p>
-      <p>
-        <span> Respiration Rate: </span>{{ curentVisitDetails.respirationRate }}
-      </p>
-      <p>
-        <span>Body Temperature : </span>{{ curentVisitDetails.bodyTemparature }}
-      </p>
-      <p>
-        <span> Blood Pressure Systolic: </span
-        >{{ curentVisitDetails.bpSystolic }}
-      </p>
-      <p>
-        <span> Blood Pressure Diastolic: </span
-        >{{ curentVisitDetails.bpDiastilic }}
-      </p>
-      <p><span> Allery: </span>{{ curentVisitDetails.allergyName }}</p>
-      <p><span> Notes: </span>{{ curentVisitDetails.keyNotes }}</p>
-    </div>
-  </div> </mat-card
-> 
+  <mat-card-title>Current Filled Visit details </mat-card-title>
+  <mat-card-subtitle
+    ><span>Height:</span>
+    {{ curentVisitDetails.height }} feets</mat-card-subtitle
+  >
+  <mat-card-subtitle
+    ><span>Weight :</span>
+    {{ curentVisitDetails.weight }} Kgs</mat-card-subtitle
+  >
+  <mat-card-subtitle
+    ><span> Respiration Rate:</span>
+    {{ curentVisitDetails.repirationRate }} breath/minute</mat-card-subtitle
+  >
+  <mat-card-subtitle
+    ><span>Body Temperature :</span>
+    {{ curentVisitDetails.bodyTemperature }} C</mat-card-subtitle
+  >
+  <mat-card-subtitle>
+    <span> Blood Pressure :</span> {{ curentVisitDetails.bpSystolic }}/{{
+      curentVisitDetails.bpDiastolic
+    }}
+    mmHg
+  </mat-card-subtitle>
+  <mat-card-subtitle
+    ><span>Blood Group : </span>
+    {{ curentVisitDetails.bloodGroup }}</mat-card-subtitle
+  >
+  <mat-card-subtitle
+    ><span>Allery : </span>
+    {{ curentVisitDetails.allergyName }}</mat-card-subtitle
+  >
+  <mat-card-subtitle>
+    <span>Notes :</span> {{ curentVisitDetails.keyNotes }}</mat-card-subtitle
+  >
+</mat-card>

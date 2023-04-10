@@ -1,0 +1,493 @@
+package com.capstone.application.service.impl;
+
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capstone.application.dto.VisitDetailsDto;
+import com.capstone.application.exception.PatientHealthException;
+import com.capstone.application.model.AdminInfo;
+import com.capstone.application.model.NurseInfo;
+import com.capstone.application.model.Prescription;
+import com.capstone.application.model.Tests;
+import com.capstone.application.model.VisitDetails;
+import com.capstone.application.repository.AdminInfoRepo;
+import com.capstone.application.repository.NurseInfoRepo;
+import com.capstone.application.repository.PatietHealthRecordsRepository;
+import com.capstone.application.repository.PrescriptionRepo;
+import com.capstone.application.repository.TestRepo;
+import com.capstone.application.service.PatientHealthRecordService;
+
+import kong.unirest.JsonNode;
+import kong.unirest.Unirest;
+import kong.unirest.json.JSONArray;
+import kong.unirest.json.JSONObject;
+import lombok.extern.log4j.Log4j2;
+
+@Service
+@Log4j2
+public class PatientHealthRecordsServiceImpl implements PatientHealthRecordService {
+
+	private static final org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager
+			.getLogger(PatientHealthRecordsServiceImpl.class);
+
+	@Autowired
+	private ModelMapper modelmapper;
+
+	@Autowired
+	private PatietHealthRecordsRepository patientHealthRecordsRepository;
+	@Autowired
+	private TestRepo testrepo;
+	@Autowired
+	private PrescriptionRepo prescriptionrepo;
+	@Autowired
+	private AdminInfoRepo adminInfoRepo;
+	@Autowired
+	private NurseInfoRepo nurseInfoRepo;
+
+	@Override
+	public Optional<VisitDetails> findById(Integer patientId) throws PatientHealthException {
+		Optional<VisitDetails>result=patientHealthRecordsRepository.findById(patientId);
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No Patient Record present with Id: "+patientId);
+		}
+		return result;
+		
+	}
+
+	@Override
+	public VisitDetails update(VisitDetails visitDetails) throws PatientHealthException {
+		
+			log.info("Updating visit details successfully");
+			VisitDetails updateResponse = patientHealthRecordsRepository.save(visitDetails);
+			if(updateResponse==null) {
+				throw new PatientHealthException("VisitDetails Not Saved...");
+			}
+			return updateResponse;
+		
+	}
+
+	@Override
+	public Tests updateforTest(Tests tests) throws PatientHealthException {
+		
+			log.info("Updating test successfully");
+			Tests result=testrepo.save(tests);
+			if(result==null) {
+				throw new PatientHealthException("Test Not Saved...");
+			}
+			return result;
+		
+	}
+
+	@Override
+	public Prescription updatePrescription(Prescription prescripion) throws PatientHealthException {
+		
+			log.info("Updating prescription details successfully");
+			Prescription result=prescriptionrepo.save(prescripion);
+			if( result==null) {
+				throw new PatientHealthException("Prescription Not Saved");
+			}
+			return result ;
+		
+	}
+
+	@Override
+	public VisitDetailsDto createVisitDetails(VisitDetailsDto visitDetailsDto) {
+		
+			log.info("Created visit details successfully");
+			modelmapper.getConfiguration().setAmbiguityIgnored(true);
+			VisitDetails visitHistory = modelmapper.map(visitDetailsDto, VisitDetails.class);
+			VisitDetails saveadvisitHistory = patientHealthRecordsRepository.save(visitHistory);			
+			VisitDetailsDto savedvisitHistoryDto = modelmapper.map(saveadvisitHistory, VisitDetailsDto.class);
+			return savedvisitHistoryDto;
+		
+
+	}
+
+	@Override
+	public VisitDetailsDto updateVisitDetials(int patientId, VisitDetailsDto visitDetailsDto) {
+		
+			log.info("Updating visit details successfully");
+			VisitDetails existingVisit = patientHealthRecordsRepository.findById(patientId).get();
+			existingVisit.setHeight(visitDetailsDto.getHeight());
+			existingVisit.setWeight(visitDetailsDto.getWeight());
+			existingVisit.setBpDiastolic(visitDetailsDto.getBpDiastolic());
+			existingVisit.setBpSystolic(visitDetailsDto.getBpSystolic());
+			existingVisit.setBodyTemperature(visitDetailsDto.getBodyTemperature());
+			existingVisit.setRepirationRate(visitDetailsDto.getRepirationRate());
+			existingVisit.setKeyNotes(visitDetailsDto.getKeyNotes());
+
+			VisitDetails updatedVisitDetails = patientHealthRecordsRepository.save(existingVisit);
+			visitDetailsDto = modelmapper.map(updatedVisitDetails, VisitDetailsDto.class);
+			return visitDetailsDto;
+		
+
+	}
+
+	@Override
+	public List<Prescription> findAllPriscription() throws PatientHealthException {
+		
+			log.info("Fetching prescription successfully");
+			List<Prescription> result=prescriptionrepo.findAll();
+			if(result.isEmpty()) {
+				throw new PatientHealthException("No prescriptions in database");
+			}
+			return result;
+		
+	}
+
+	@Override
+	public void postAdmins() throws Throwable, Exception {
+		ArrayList<String> emails = new ArrayList<>();
+		ArrayList<String> firstName = new ArrayList<>();
+		ArrayList<String> lastName = new ArrayList<>();
+		ArrayList<String> role = new ArrayList<>();
+
+		kong.unirest.HttpResponse<JsonNode> tokenResponse = Unirest
+				.post("https://dev-qnzlgih035ihuldo.us.auth0.com/oauth/token")
+				.header("content-type", "application/json")
+				.body("{\"client_id\":\"mzd3nJojQh0Y0GfIUUv5De6Mq8HbHK1k\",\"client_secret\":\"nhOi6RhOIDbRf_nj5jnC8H-OX3sZvz573FJI5BdE5ozk96_hH3oYJm7A_mtq-voF\",\"audience\":\"https://dev-qnzlgih035ihuldo.us.auth0.com/api/v2/\",\"grant_type\":\"client_credentials\"}")
+				.asJson();
+
+		JSONArray jsonArray = tokenResponse.getBody().getArray();
+		JSONObject jObj = (JSONObject) jsonArray.get(0);
+		String token = jObj.getString("access_token");
+
+		kong.unirest.HttpResponse<JsonNode> getUsersResponse = Unirest
+				.get("https://dev-qnzlgih035ihuldo.us.auth0.com/api/v2/users?email.domail:gmail.com/")
+				.header("Authorization", "Bearer " + token).asJson();
+
+		JSONArray usersArray = getUsersResponse.getBody().getArray();
+		System.out.println(usersArray);
+
+		for (int i = 0; i < usersArray.length(); i++) {
+			emails.add(usersArray.getJSONObject(i).getString("email"));
+			JSONObject user = (JSONObject) usersArray.getJSONObject(i).get("user_metadata");
+			firstName.add(user.getString("FirstName"));
+			lastName.add(user.getString("LastName"));
+			role.add(user.getString("Role"));
+
+		}
+		for (int i = 0; i < emails.size(); i++) {
+
+			AdminInfo doc = new AdminInfo();
+			doc.setAdmin_email(emails.get(i));
+			doc.setFirst_Name(firstName.get(i));
+			doc.setLast_Name(lastName.get(i));
+
+			System.out.println(role.get(i));
+
+			int x = adminInfoRepo.isValuePresent(emails.get(i));
+
+			// System.out.println(x);
+			if (role.get(i).equals("Admin") && x == 0) {
+
+				adminInfoRepo.save(doc);
+			}
+
+		}
+
+	}
+
+	@Override
+	public void postNurses() throws Throwable, Exception {
+
+		ArrayList<String> emails = new ArrayList<>();
+		ArrayList<String> firstName = new ArrayList<>();
+		ArrayList<String> lastName = new ArrayList<>();
+		ArrayList<String> role = new ArrayList<>();
+
+		kong.unirest.HttpResponse<JsonNode> tokenResponse = Unirest
+				.post("https://dev-qnzlgih035ihuldo.us.auth0.com/oauth/token")
+				.header("content-type", "application/json")
+				.body("{\"client_id\":\"mzd3nJojQh0Y0GfIUUv5De6Mq8HbHK1k\",\"client_secret\":\"nhOi6RhOIDbRf_nj5jnC8H-OX3sZvz573FJI5BdE5ozk96_hH3oYJm7A_mtq-voF\",\"audience\":\"https://dev-qnzlgih035ihuldo.us.auth0.com/api/v2/\",\"grant_type\":\"client_credentials\"}")
+				.asJson();
+
+		JSONArray jsonArray = tokenResponse.getBody().getArray();
+		JSONObject jObj = (JSONObject) jsonArray.get(0);
+		String token = jObj.getString("access_token");
+
+		kong.unirest.HttpResponse<JsonNode> getUsersResponse = Unirest
+				.get("https://dev-qnzlgih035ihuldo.us.auth0.com/api/v2/users?email.domail:gmail.com/")
+				.header("Authorization", "Bearer " + token).asJson();
+
+		JSONArray usersArray = getUsersResponse.getBody().getArray();
+		System.out.println(usersArray);
+
+		for (int i = 0; i < usersArray.length(); i++) {
+			emails.add(usersArray.getJSONObject(i).getString("email"));
+			JSONObject user = (JSONObject) usersArray.getJSONObject(i).get("user_metadata");
+			firstName.add(user.getString("FirstName"));
+			lastName.add(user.getString("LastName"));
+			role.add(user.getString("Role"));
+
+		}
+
+		for (int i = 0; i < emails.size(); i++) {
+
+			NurseInfo doc = new NurseInfo();
+			doc.setNurse_email(emails.get(i));
+			doc.setFirst_Name(firstName.get(i));
+			doc.setLast_Name(lastName.get(i));
+
+			System.out.println(role.get(i));
+
+			int x = nurseInfoRepo.isValuePresent(emails.get(i));
+
+			if (role.get(i).equals("Nurse") && x == 0) {
+
+				nurseInfoRepo.save(doc);
+			}
+		}
+
+	}
+
+	@Override
+	public List<NurseInfo> NursefindAll() throws PatientHealthException {
+		List<NurseInfo> result=nurseInfoRepo.findAll();
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No nurses in DataBase");
+		}
+		return result;
+		
+	}
+
+	public List<AdminInfo> AdminfindAll()throws PatientHealthException {
+		List<AdminInfo> result=adminInfoRepo.findAll();
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No Admins Pressent in Database");
+		}
+		return result;
+		
+	}
+
+	@Override
+	public List<Tests> findTestByVisitId(Integer visitId) throws PatientHealthException{
+		List<Tests> result=testrepo.findTestByVisitId(visitId);
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No Tests present with Id: "+visitId);
+		}
+		return result;
+	}
+
+	@Override
+	public List<Integer> findVisitIdByPatientId(Integer patientId) throws PatientHealthException {
+		List<Integer> result=patientHealthRecordsRepository.findVisitIdByPatientId(patientId);
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No Visit Id's present with PatientId: "+patientId);
+		}
+		return result;
+	}
+
+	@Override
+	public List<Prescription> findPrescriptionByVisitId(Integer visitId) throws PatientHealthException {
+		List<Prescription> result=prescriptionrepo.findPrescriptionByVisitId(visitId);
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No Prescription's present with VisitId: "+visitId);
+		}
+		return result;
+	}
+
+	// aakash solanke ------------------
+
+	@Override
+	public List<VisitDetails> findAll() throws PatientHealthException {
+		List<VisitDetails> result=patientHealthRecordsRepository.findAll();
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No VisitDetails Present in DataBase");
+		}
+		return result;
+	}
+
+	@Override
+	public VisitDetails findVisistDetailsByAppointmentId(Integer appointmentId) throws PatientHealthException {
+		VisitDetails result=patientHealthRecordsRepository.findVisitDetailsById(appointmentId);
+		if(result==null) {
+			throw new PatientHealthException("No VisistDetails present with AppointmentId: "+appointmentId);
+		}
+		return patientHealthRecordsRepository.findVisitDetailsById(appointmentId);
+	}
+
+	@Override
+	public VisitDetails getPreviousVisitDetailsByPatientId(Integer patientId) throws PatientHealthException {
+		VisitDetails result=patientHealthRecordsRepository.findVisitDetailsById(patientId);
+		if(result==null) {
+			throw new PatientHealthException("No PreviousVisitDetails present with patientId: "+patientId);
+		}
+		return result;
+	}
+
+	@Override
+	public List<Prescription> findPrescriptionById(Integer visitId) throws PatientHealthException {
+		List<Prescription> result=prescriptionrepo.findPrescriptionByVisitId(visitId);
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No VisitDetails Present in DataBase");
+		}
+		return result;
+	}
+
+	@Override
+	public Prescription savePrescription(Prescription prescription) throws PatientHealthException {
+		Prescription result=prescriptionrepo.save(prescription);
+		if(result==null) {
+			throw new PatientHealthException("Prescription Not Saved");
+		}
+		return prescriptionrepo.save(prescription);
+	}
+
+
+
+	@Override
+	public Tests saveTest(Tests test) throws PatientHealthException {
+		Tests result=testrepo.save(test);
+		if(result==null) {
+			throw new PatientHealthException("Prescription Not Saved");
+		}
+		return testrepo.save(test);
+	}
+
+	@Override
+	public void deleteTest(Integer testId) {
+		// TODO Auto-generated method stub
+		testrepo.deleteById(testId);
+
+	}
+
+	// aakash solanke
+
+	@Override
+	public VisitDetails getPreviousVisitDetailsByPatientIdforhistory(Integer patientId) throws PatientHealthException {
+		VisitDetails result=patientHealthRecordsRepository.getPreviousVisitIdDetailsById(patientId);
+		if(result==null) {
+			throw new PatientHealthException("Previous Visit Details by patientId: "+patientId);
+		}
+		return result;
+	}
+
+	@Override
+	public Tests updateForTestByTestId(int testId, Tests test) throws PatientHealthException {
+
+		Optional<Tests> testofpatient = testrepo.findById(testId);
+		if(testofpatient.isEmpty()) {
+			throw new PatientHealthException("No Tests Present with : testId"+testId);
+		}
+		if (testofpatient.isPresent()) {
+			test.setTestId(testId);
+			return testrepo.save(test);
+		}
+		return test;
+	}
+
+	@Override
+	public boolean deletePrescription(int prescriptionId) {
+		prescriptionrepo.deleteById(prescriptionId);
+		return true;
+	}
+
+	@Override
+	public boolean updateForPrescriptionByPrescriptionId(int prescriptionId, Prescription prescription) {
+		Optional<Prescription> prescriptionofpatient = prescriptionrepo.findById(prescriptionId);
+
+		if (prescriptionofpatient.isPresent()) {
+			prescription.setPrescriptionId(prescriptionId);
+			prescriptionrepo.save(prescription);
+		}
+		return true;
+	}
+
+	// Eshwari
+
+	@Override
+
+	public Optional<VisitDetails> findBloodGroupForPatient(int patientId) throws PatientHealthException {
+
+		// TODO Auto-generated method stub
+
+		Optional<VisitDetails> result = patientHealthRecordsRepository.getBloodGroup(patientId);
+		if (result.isEmpty()) {
+			throw new PatientHealthException("No patient found with patient Id " + patientId);
+		}
+
+		return patientHealthRecordsRepository.getBloodGroup(patientId);
+
+	}
+
+	@Override
+
+	public Optional<VisitDetails> getDetailsByAppId(int appointmentId) throws PatientHealthException {
+
+		Optional<VisitDetails> result=patientHealthRecordsRepository.getVisitDetailsBtAppId(appointmentId);
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No Appointment  found with Appointment Id " + appointmentId);
+
+		}
+
+		return patientHealthRecordsRepository.getVisitDetailsBtAppId(appointmentId);
+
+	}
+
+	// Sangeeta
+	@Override
+	public long countNurses() {
+		return nurseInfoRepo.count();
+	}
+
+	@Override
+	public long countAdmins() {
+		return adminInfoRepo.count();
+	}
+
+	// mrunal
+	public List<VisitDetails> findVisitDetailsByVisitId(int visitId) throws PatientHealthException {
+		List<VisitDetails> result=patientHealthRecordsRepository.findVisitDetailsByVisitId(visitId);
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No VisitDetails found with visitId  " + visitId); 
+		}
+		return patientHealthRecordsRepository.findVisitDetailsByVisitId(visitId);
+	}
+
+	// gayatri
+	public NurseInfo getNurseDetails(String nurse_email) throws PatientHealthException {
+		// TODO Auto-generated method stub
+		NurseInfo result=nurseInfoRepo.getNurseInfoByEmail(nurse_email);
+		if(result==null) {
+			throw new PatientHealthException("No NurseDetails found with nurse_email  " + nurse_email); 
+		}
+		return result;
+	}
+
+	@Override
+	public void deleteNurse(String nurseEmail) {
+		// TODO Auto-generated method stub
+		nurseInfoRepo.deleteById(nurseEmail);
+	}
+
+	@Override
+	public void deleteAdmin(String adminEmail) {
+		// TODO Auto-generated method stub
+		adminInfoRepo.deleteById(adminEmail);
+
+	}
+
+	@Override
+	public Optional<AdminInfo> findAdminInfoByEmailId(String email) throws PatientHealthException {
+		Optional<AdminInfo> result = adminInfoRepo.findById(email);
+		if(result.isEmpty()) {
+			throw new PatientHealthException("No AdminInfo found with email  " + email); 
+
+		}
+		return result;
+	}
+
+}

@@ -182,7 +182,7 @@ export class ViewpetienthistoryComponent implements AfterViewInit {
           this.tests = response;
           sessionStorage.setItem('visitid', this.arr[i]);
           var len = this.previousTestData.push(response);
-          // console.log(this.tests);
+          console.log("sssssss",this.tests);
         },
         (error: HttpErrorResponse) => {
           alert(error.message);

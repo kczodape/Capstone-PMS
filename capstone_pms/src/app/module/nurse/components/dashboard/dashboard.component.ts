@@ -7,7 +7,7 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NurseService } from '../../nurse.service';
 
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 // import { VisitDetails } from '../addvisitdetails/visitDetails.model';
 
 export interface AppointmentList {
@@ -28,16 +28,16 @@ export class DashboardComponent implements AfterViewInit, OnInit {
   constructor(
     private appointmentData: NurseService,
     private _liveAnnouncer: LiveAnnouncer,
-    private datepipe:DatePipe
+    private datepipe: DatePipe
   ) {}
 
   ///to set nurseEmail
   // public visitDetails: VisitDetails =new VisitDetails() ;
   VisitDetailsnurseEmail = sessionStorage.getItem('currentUserEmail');
   ngOnInit(): void {
-   // this.getAppointments();
-   this.getTodaysAppointment() 
-    console.log("nurse email",this.VisitDetailsnurseEmail);
+    // this.getAppointments();
+    this.getTodaysAppointment();
+    console.log('nurse email', this.VisitDetailsnurseEmail);
   }
   private _appointments!: AppointmentList[];
   public get appointments(): AppointmentList[] {
@@ -61,8 +61,6 @@ export class DashboardComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     //this.getAppointments();
-    
-   
   }
 
   announceSortChange(sortState: Sort) {
@@ -81,18 +79,16 @@ export class DashboardComponent implements AfterViewInit, OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
- 
+
   sendAppointmentData(physicianEmail: any, appointmentId: any, patientId: any) {
     sessionStorage.setItem('physicianEmail', physicianEmail);
     sessionStorage.setItem('appointmentId', appointmentId);
     sessionStorage.setItem('patientId', patientId);
-   
   }
-
 
   todayDate: Date = new Date();
   currentDate: DatePipe = new DatePipe('en-us');
-  
+
   todaysAppointment: any;
   transformdate: any;
   email = 'aakash.solanke@gmail.com';
@@ -103,7 +99,7 @@ export class DashboardComponent implements AfterViewInit, OnInit {
     this.formattedDate = this.datepipe.transform(selectedDate, 'dd-MM-yyyy');
     console.log(this.formattedDate);
     this.appointmentData
-      .getTodaysAppointment( this.formattedDate, this.status)
+      .getTodaysAppointment(this.formattedDate, this.status)
       .subscribe((response) => {
         this.todaysAppointment = response;
 
@@ -119,26 +115,27 @@ export class DashboardComponent implements AfterViewInit, OnInit {
     this.transformdate = this.currentDate.transform(date, 'dd-MM-YYYY');
     console.log(this.transformdate);
     this.appointmentData
-      .getTodaysAppointment( this.transformdate, this.status)
-      .subscribe((response ) => {
+      .getTodaysAppointment(this.transformdate, this.status)
+      .subscribe((response) => {
         this.todaysAppointment = response;
         console.log(this.todaysAppointment);
-        console.log( "appoitment for patientId",this.todaysAppointment[0].patientId);
-         this.getPatientbyId(this.todaysAppointment[0].patientId)
+        console.log(
+          'appoitment for patientId',
+          this.todaysAppointment[0].patientId
+        );
+        this.getPatientbyId(this.todaysAppointment[0].patientId);
         this.dataSource = new MatTableDataSource(this.todaysAppointment);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       });
   }
 
-
   // currentPatientId:any=sessipatientbyIdData:any
-  patientbyIdData:any;
-  getPatientbyId(patientId:number) {
-    this.appointmentData.getPatientbyId(patientId).subscribe(response => {
+  patientbyIdData: any;
+  getPatientbyId(patientId: number) {
+    this.appointmentData.getPatientbyId(patientId).subscribe((response) => {
       this.patientbyIdData = response;
-      console.log(this.patientbyIdData)
-    })
-  }
-  
+      console.log(this.patientbyIdData);
+    });
+  }
 }

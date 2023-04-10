@@ -14,9 +14,16 @@ h4 {
   }
 }
 
+.date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
 .inputfield {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 }
 
 mat-form-field {
@@ -65,4 +72,3 @@ mat-icon:hover {
   display: flex;
   justify-content: space-between;
 }
-

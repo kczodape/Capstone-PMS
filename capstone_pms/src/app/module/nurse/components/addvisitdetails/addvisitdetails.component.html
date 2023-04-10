@@ -3,13 +3,23 @@
     <i class="fa-regular fa-pen-to-square" style="margin-right: 15px"></i
     ><span>Fill Visit Details</span>
   </h4>
-  <form #visit="ngForm" (ngSubmit)="onSubmit(visit.value)" class="add-details">
+  <form
+    [formGroup]="myGroup"
+    action="/submit-myForm"
+    #visit="ngForm"
+    method="post"
+    (ngSubmit)="onSubmit(visit.value)"
+    class="add-details"
+  >
     <div
       class="formfield"
       style="display: flex; justify-content: space-between"
     >
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Height</mat-label>
+        <mat-error *ngIf="myGroup.get('myInputheight')"
+          >Height is required</mat-error
+        >
         <input
           matInput
           type="number"
@@ -21,14 +31,16 @@
           max="10"
           step="1.10"
           class="form-control"
-          required
+          formControlName="myInputheight"
         />
         <span matTextSuffix> ft</span>
       </mat-form-field>
 
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Weight</mat-label>
-
+        <mat-error *ngIf="myGroup.get('myInputweight')"
+          >Weight is required</mat-error
+        >
         <input
           matInput
           type="number"
@@ -39,7 +51,7 @@
           min="1"
           max="200"
           step="1.10"
-          required
+          formControlName="myInputweight"
         />
         <span matTextSuffix> kgs</span>
       </mat-form-field>
@@ -50,6 +62,9 @@
     >
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Respiration Rate</mat-label>
+        <mat-error *ngIf="myGroup.get('myInputLastrespiration')"
+          >Respiration Rate is required</mat-error
+        >
         <input
           matInput
           type="number"
@@ -60,13 +75,16 @@
           min="1"
           max="50"
           step="1"
-          required
+          formControlName="myInputLastrespiration"
         />
         <span matTextSuffix> breaths/minute</span>
       </mat-form-field>
 
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Body Temperature</mat-label>
+        <mat-error *ngIf="myGroup.get('myInputtemperature')"
+          >Body Temperatureis required</mat-error
+        >
         <input
           matInput
           type="number"
@@ -78,7 +96,7 @@
           min="1"
           max="100"
           step="1.10"
-          required
+          formControlName="myInputtemperature"
         />
         <span matTextSuffix> C</span>
       </mat-form-field>
@@ -90,6 +108,9 @@
     >
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Blood Pressure Systolic</mat-label>
+        <mat-error *ngIf="myGroup.get('myInputsystolic')"
+          >Blood Pressure Systolic is required</mat-error
+        >
         <input
           matInput
           (keypress)="numValidator($event)"
@@ -100,13 +121,16 @@
           min="1"
           max="200"
           step="1"
-          required
+          formControlName="myInputsystolic"
         />
         <span matTextSuffix> mm Hg</span>
       </mat-form-field>
 
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Blood Pressure Diastolic</mat-label>
+        <mat-error *ngIf="myGroup.get('myInputdiastolic')"
+          >Blood Pressure Diastolic is required</mat-error
+        >
         <input
           matInput
           type="number"
@@ -117,7 +141,7 @@
           min="1"
           max="200"
           step="1"
-          required
+          formControlName="myInputdiastolic"
         />
         <span matTextSuffix>mm Hg</span>
       </mat-form-field>
@@ -128,10 +152,13 @@
     >
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Allergies</mat-label>
+        <mat-error *ngIf="myGroup.get('myInputallergies')"
+          >Allergies is required</mat-error
+        >
         <mat-select
           name="allergyName"
           [(ngModel)]="visitDetails.allergyName"
-          required
+          formControlName="myInputallergies"
         >
           <mat-option>None</mat-option>
           <mat-option *ngFor="let a of allergy" [value]="a.allergyName">{{
@@ -141,7 +168,14 @@
       </mat-form-field>
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Select BloodGroup</mat-label>
-        <mat-select name="bloodGroup" [(ngModel)]="visitDetails.bloodGroup">
+        <mat-error *ngIf="myGroup.get('myInputbloodGroup')"
+          >Blood Group is required</mat-error
+        >
+        <mat-select
+          formControlName="myInputbloodGroup"
+          name="bloodGroup"
+          [(ngModel)]="visitDetails.bloodGroup"
+        >
           <mat-option
             *ngFor="let bloodGroup of bloodGroups"
             [value]="bloodGroup.value"
@@ -152,7 +186,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <!-- <div *ngIf="visitDetails.height.errors?.['required'] || visitDetails.weight.errors?.['required'] || visitDetails.repirationRate.errors?.['required'] 
+    <!-- <div *ngIf="visitDetails.height.errors?.[''] || visitDetails.weight.errors?.['required'] || visitDetails.repirationRate.errors?.['required'] 
     || visitDetails.bodyTemperature.errors?.['required'] || visitDetails.bpSystolic.errors?.['required'] || visitDetails.bpDiastolic.errors?.['required'] || visitDetails.allergyName.errors?.['required'] || visitDetails.keyNotes.errors?.['required']  ">
       *All fields is required.
     </div>
@@ -165,6 +199,9 @@
     >
       <mat-form-field appearance="outline" style="width: 40%">
         <mat-label>Notes</mat-label>
+        <mat-error *ngIf="myGroup.get('myInputKeynotes')"
+          >Notes is required</mat-error
+        >
         <input
           matInput
           placeholder="Any Notes of physician"
@@ -172,6 +209,7 @@
           [(ngModel)]="visitDetails.keyNotes"
           required
           maxlength="100"
+          formControlName="myInputbloodnotes"
         />
       </mat-form-field>
       <button
@@ -182,6 +220,7 @@
         (click)="actionMethod(); clicked = true"
         color="primary"
         class="submit"
+        [disabled]="!myGroup.valid"
       >
         Save
       </button>

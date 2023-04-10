@@ -46,7 +46,7 @@
       <p>
         <span>Body Temperature : </span>{{ visistdetailsdata.bodyTemperature }}
       </p>
-      <p><span>Allergies : </span></p>
+      <p><span>Allergies : </span>{{ visistdetailsdata.allergyName }}</p>
       <p><span>Hight : </span> {{ visistdetailsdata.height }} cm</p>
       <p><span>Weight : </span>{{ visistdetailsdata.weight }} kg</p>
       <p>
@@ -180,7 +180,7 @@
   <p><label for="" style="">Enter diagnosis:</label></p>
   <textarea rows="4" cols="50"></textarea>
 </form>
-<div class="bottom-btn" style="margin-bottom: 15px;">
+<div class="bottom-btn" style="margin-bottom: 15px">
   <button mat-raised-button color="primary" mat-button class="btn-class btn">
     Save
   </button>
@@ -188,7 +188,7 @@
     mat-raised-button
     color="link"
     mat-button
-    class="btn-class btn-class1"
+    class="btn-class btn-class1 btnhover"
   >
     Cansel
   </button>

@@ -39,6 +39,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { SubmitdialogComponent } from './components/submitdialog/submitdialog.component';
 import { CurrentvisitdetailsComponent } from './components/currentvisitdetails/currentvisitdetails.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -86,6 +88,7 @@ import { CurrentvisitdetailsComponent } from './components/currentvisitdetails/c
     MatDatepickerModule,
     MatNativeDateModule,
     MatMenuModule,
+    ReactiveFormsModule
   ],
 })
 export class NurseModule {}

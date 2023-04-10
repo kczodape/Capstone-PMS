@@ -1,0 +1,97 @@
+package com.capstone.application.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.capstone.application.dto.VisitDetailsDto;
+import com.capstone.application.exception.PatientHealthException;
+import com.capstone.application.model.AdminInfo;
+import com.capstone.application.model.NurseInfo;
+import com.capstone.application.model.Prescription;
+import com.capstone.application.model.Tests;
+import com.capstone.application.model.VisitDetails;
+
+public interface PatientHealthRecordService {
+
+	public Optional<VisitDetails> findById(Integer patientId)throws PatientHealthException;
+
+	public VisitDetails update(VisitDetails visitDetails) throws PatientHealthException ;
+
+	public Prescription updatePrescription(Prescription prescripion)throws PatientHealthException;
+
+	public Tests updateforTest(Tests tests)throws PatientHealthException;
+
+	public VisitDetailsDto createVisitDetails(VisitDetailsDto visitDetailsDto);
+
+	public VisitDetailsDto updateVisitDetials(int patientId, VisitDetailsDto visitDetailsDto);
+
+	public List<Prescription> findAllPriscription() throws PatientHealthException;
+
+	public void postAdmins() throws Throwable, Exception;
+
+	public void postNurses() throws Throwable, Exception;
+
+	public List<NurseInfo> NursefindAll()throws PatientHealthException;
+
+	public List<AdminInfo> AdminfindAll()throws PatientHealthException;
+
+	// Patient new methods (Pranit)
+	public List<Tests> findTestByVisitId(Integer visitId)throws PatientHealthException;
+
+	public List<Integer> findVisitIdByPatientId(Integer patientId)throws PatientHealthException ;
+
+	public List<Prescription> findPrescriptionByVisitId(Integer visitId)throws PatientHealthException;
+
+	// aakash solanke
+
+	public List<VisitDetails> findAll()throws PatientHealthException;
+
+	public VisitDetails findVisistDetailsByAppointmentId(Integer appointmentId)throws PatientHealthException;
+
+	public VisitDetails getPreviousVisitDetailsByPatientId(Integer patientId)throws PatientHealthException ;
+
+	public List<Prescription> findPrescriptionById(Integer visitId) throws PatientHealthException;
+
+	public Prescription savePrescription(Prescription prescription) throws PatientHealthException;
+
+
+
+	public Tests saveTest(Tests test)throws PatientHealthException ;
+
+	public void deleteTest(Integer testId) ;
+
+	public VisitDetails getPreviousVisitDetailsByPatientIdforhistory(Integer patientId) throws PatientHealthException;
+
+	public Tests updateForTestByTestId(int testId, Tests test)throws PatientHealthException;
+
+	public boolean deletePrescription(int prescriptionId);
+
+	public boolean updateForPrescriptionByPrescriptionId(int prescriptionId, Prescription prescription);
+
+	// Eshwari
+
+	public Optional<VisitDetails> findBloodGroupForPatient(int patientId) throws PatientHealthException;
+
+	public Optional<VisitDetails> getDetailsByAppId(int appointmentId)throws PatientHealthException;
+	
+	//Sangeeta
+		public long countNurses();
+
+		public long countAdmins();
+		
+		//mrunal
+		public List<VisitDetails> findVisitDetailsByVisitId(int visitId)throws PatientHealthException;
+		
+		//gayatri
+		public NurseInfo getNurseDetails(String nurse_email)throws PatientHealthException;
+		
+		
+		public void deleteNurse(String nurseEmail);
+
+		public void deleteAdmin(String adminEmail);
+		
+		public Optional<AdminInfo> findAdminInfoByEmailId(String email)throws PatientHealthException ;
+
+		
+
+}

@@ -14,6 +14,12 @@ h4 {
   }
 }
 
+.date{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .inputfield {
   display: flex;
   justify-content: space-between;
@@ -70,5 +76,5 @@ i {
   margin-top: 15px;
   background-color: $textcolor;
   padding: 27px 20px;
-  color: whitesmoke;
+  color: whitesmoke;
 }

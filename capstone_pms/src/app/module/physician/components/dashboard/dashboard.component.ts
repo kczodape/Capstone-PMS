@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getTodaysAppointment();
 
-    this.getallPatient();
+    // this.getallPatient();
   }
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -97,16 +97,20 @@ export class DashboardComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  patientdata: any;
-  getallPatient() {
-    this.service.getallPatient().subscribe((response) => {
-      this.patientdata = response;
-      console.log(this.patientdata);
-    });
-  }
+  // patientdata: any;
+  // getallPatient() {
+  //   this.service.getallPatient().subscribe((response) => {
+  //     this.patientdata = response;
+  //     console.log(this.patientdata);
+  //   });
+  // }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if(this.dataSource.paginator){
+      this.dataSource.paginator.firstPage();
+    }
   }
 
   exportToExcel(): void {

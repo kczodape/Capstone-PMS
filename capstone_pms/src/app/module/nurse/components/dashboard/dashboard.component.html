@@ -2,7 +2,7 @@
 <h4><mat-icon>calendar_today</mat-icon><span>Accepted Appointment</span></h4>
 
 <div class="inputfield">
-  <div class="parent1">
+  <!-- <div class="parent1">
     <div class="child1">
       <mat-form-field class="example-full-width">
         <input
@@ -29,9 +29,38 @@
           (keyup)="applyFilter($event)"
           placeholder="search here"
           #input
-        />
+          />
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
+    </div>
+  </div> -->
+
+  <div class="inputfield">
+    <div class="date">
+      <mat-form-field appearance="outline" (click)="picker.open()">
+        <mat-label>Calender</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [min]="todayDate"
+          (dateChange)="onDateSelected($event.target.value)"
+        />
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-icon matSuffix>calendar_today</mat-icon>
+      </mat-form-field>
+      <form class="example-form">
+        <mat-form-field appearance="outline" style="float: right">
+          <mat-label>Search</mat-label>
+          <input
+            matInput
+            #message
+            maxlength="25"
+            (keyup)="applyFilter($event)"
+          />
+          <mat-hint align="end">{{ message.value.length }} / 25</mat-hint>
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
     </div>
   </div>
 
